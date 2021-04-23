@@ -12,20 +12,23 @@ export async function convertLockfile(lockV2: string): Promise<string> {
   lockV1 += "# yarn lockfile v1\n"
   lockV1 += "\n";
 
-  for (const [packageKey, packageData] of Object.entries(lockV2Obj as object)) {
-    if (packageKey === "__metadata") continue;
-    if (/@(?:patch|workspace):/.test(packageKey)) continue;
+  const clausePromises = Object.entries(lockV2Obj as object).map(async ([packageKey, packageData]) => {
+    let clause = "";
+    if (packageKey === "__metadata") return clause;
+    if (/@(?:patch|workspace):/.test(packageKey)) return clause;
 
-    lockV1 += "\n";
-    lockV1 += `${convertKey(packageKey)}:\n`;
+    clause += "\n";
+    clause += `${convertKey(packageKey)}:\n`;
     if (typeof packageData.version === "string") {
-      lockV1 += `  version ${JSON.stringify(packageData.version)}\n`;
+      clause += `  version ${JSON.stringify(packageData.version)}\n`;
     }
     if (typeof packageData.resolution === "string") {
-      lockV1 += await convertResolution(packageData.resolution, agent);
+      clause += await convertResolution(packageData.resolution, agent);
     }
-    lockV1 += convertDependencies(packageData.dependencies);
-  }
+    clause += convertDependencies(packageData.dependencies);
+  });
+
+  lockV1 += (await Promise.all(clausePromises)).join();
 
   agent.destroy();
 
