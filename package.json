@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "https://github.com/qnighy/yarn-lock-v1",
   "author": "Masaki Hara <ackie.h.gmai@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@yarnpkg/pnpify": "^3.0.0-rc.3"
+  }
 }
