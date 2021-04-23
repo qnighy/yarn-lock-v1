@@ -56,6 +56,9 @@ async function convertResolution(resolutionV2: string, agent: https.Agent): Prom
       const resp = await fetch(`https://registry.yarnpkg.com/${packageName}/${version}`, {
         agent,
       });
+      if (!resp.ok) {
+        throw new Error(`Got ${resp.status} from ${resp.url}`);
+      }
       const packageInfo = await resp.json();
       let resolution = "";
       resolution += `  resolution https://registry.yarnpkg.com/${packageName}/-/${packageBaseName}-${version}.tgz#${packageInfo.dist.shasum}\n`;
