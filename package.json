@@ -1,0 +1,9 @@
+{
+  "name": "yarn-lock-v1",
+  "version": "0.1.0",
+  "description": "A tool to downgrade your yarn.lock",
+  "main": "index.js",
+  "repository": "https://github.com/qnighy/yarn-lock-v1",
+  "author": "Masaki Hara <ackie.h.gmai@gmail.com>",
+  "license": "MIT"
+}
