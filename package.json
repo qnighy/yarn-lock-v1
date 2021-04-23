@@ -14,11 +14,13 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
+    "node-fetch": "^2.6.1",
     "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.41",
+    "@types/node-fetch": "^2.5.10",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
