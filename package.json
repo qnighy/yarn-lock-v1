@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prepack": "$npm_execpath run build"
+    "prepack": "$npm_execpath run build",
+    "start": "$npm_node_execpath dist/index.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
