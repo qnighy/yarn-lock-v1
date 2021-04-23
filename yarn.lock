@@ -1223,6 +1223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "tslib@npm:2.2.0"
+  checksum: 2d35468c470410871c5246e43f12dcb6d0fc363b617c176f26443b9530e5c5ee8448966892a42956168d8f495da7865bda33dfe82c26c91991e28999974a618f
+  languageName: node
+  linkType: hard
+
 "tunnel@npm:^0.0.6":
   version: 0.0.6
   resolution: "tunnel@npm:0.0.6"
@@ -1234,6 +1241,26 @@ __metadata:
   version: 3.3.0
   resolution: "typanion@npm:3.3.0"
   checksum: e31d9ee6e50bba9d066675a0efcc43df95c581176dcd02855c690bbf1936a160d56c8e3146d9e6870e982a4dc807221e9ede0f0d4603f82a074181ab1860d80d
+  languageName: node
+  linkType: hard
+
+typescript@^4.2.4:
+  version: 4.2.4
+  resolution: "typescript@npm:4.2.4"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: edaede2fa77f56b7fba80ee624a2368ab1216e75b0434d968ccb47ab0a5e2f6d94f848b3b111c1237dd71e988cd376af26370dcdad3b94355c76e759f0dd0a1e
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^4.2.4#builtin<compat/typescript>":
+  version: 4.2.4
+  resolution: "typescript@patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 3be44317593182e8ce494c114e7ad9b0bb2553a22f3085cc6da4f0a36912c20850daa9be4c898af2ab6fc8b12f430c1c9e46ac715721867cd38643f2350d3ef9
   languageName: node
   linkType: hard
 
@@ -1267,5 +1294,7 @@ __metadata:
   resolution: "yarn-lock-v1@workspace:."
   dependencies:
     "@yarnpkg/pnpify": ^3.0.0-rc.3
+    tslib: ^2.2.0
+    typescript: ^4.2.4
   languageName: unknown
   linkType: soft
