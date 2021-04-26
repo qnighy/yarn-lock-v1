@@ -6,6 +6,9 @@
   "repository": "https://github.com/qnighy/yarn-lock-v1",
   "author": "Masaki Hara <ackie.h.gmai@gmail.com>",
   "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "tsc && babel src -d dist -x .ts",
     "prepack": "$npm_execpath run build",
