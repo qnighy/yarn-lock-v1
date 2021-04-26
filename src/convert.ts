@@ -44,7 +44,7 @@ export async function convertLockfile(lockV2: string, options: Options = {}): Pr
       clause += await convertResolution(packageData.resolution, yarnrc, agent);
     }
     clause += convertDependencies(packageData.dependencies, packageData.dependenciesMeta);
-    console.log(packageKey);
+    // console.log(packageKey);
     return clause;
   });
 
