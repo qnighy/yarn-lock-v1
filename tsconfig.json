@@ -6,7 +6,6 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "composite": true,
-    "importHelpers": true,
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "node",

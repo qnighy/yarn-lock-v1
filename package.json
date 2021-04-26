@@ -16,7 +16,6 @@
     "@babel/runtime-corejs3": "^7.13.17",
     "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.1",
-    "tslib": "^2.2.0",
     "yargs": "^16.2.0"
   },
   "devDependencies": {

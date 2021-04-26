@@ -4983,13 +4983,6 @@ resolve@^1.14.2:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "tslib@npm:2.2.0"
-  checksum: 2d35468c470410871c5246e43f12dcb6d0fc363b617c176f26443b9530e5c5ee8448966892a42956168d8f495da7865bda33dfe82c26c91991e28999974a618f
-  languageName: node
-  linkType: hard
-
 "tunnel@npm:^0.0.6":
   version: 0.0.6
   resolution: "tunnel@npm:0.0.6"
@@ -5249,7 +5242,6 @@ typescript@^4.2.4:
     "@yarnpkg/pnpify": ^3.0.0-rc.3
     js-yaml: ^4.1.0
     node-fetch: ^2.6.1
-    tslib: ^2.2.0
     typescript: ^4.2.4
     yargs: ^16.2.0
   languageName: unknown
