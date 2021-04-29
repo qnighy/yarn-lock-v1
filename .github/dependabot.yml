@@ -10,3 +10,8 @@ updates:
     schedule:
       interval: "daily"
     reviewers: ["qnighy"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    reviewers: ["qnighy"]
