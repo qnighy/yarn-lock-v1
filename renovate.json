@@ -10,7 +10,8 @@
     },
     {
       "matchPaths": ["package.json"],
-      "enabled": true
+      "enabled": true,
+      "rangeStrategy": "bump"
     }
   ]
 }
