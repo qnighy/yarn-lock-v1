@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "reviewers": ["qnighy"],
+  "packageRules": [
+    {
+      "matchPaths": ["**"],
+      "enabled": false
+    },
+    {
+      "matchPaths": ["package.json"],
+      "enabled": true,
+      "rangeStrategy": "bump"
+    }
+  ]
+}
