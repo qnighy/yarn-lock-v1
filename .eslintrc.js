@@ -24,9 +24,12 @@ const config = {
   },
   overrides: [
     {
-      files: [".eslintrc.js", ".babelrc.js", "jest.config.js"],
+      files: [".eslintrc.js", ".babelrc.js", "jest.config.js", "jest.setup.js"],
       env: {
         node: true,
+      },
+      rules: {
+        "@typescript-eslint/no-var-requires": "off",
       },
     },
   ],

@@ -5621,7 +5621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"json-stringify-safe@npm:~5.0.1":
+"json-stringify-safe@npm:^5.0.1, json-stringify-safe@npm:~5.0.1":
   version: 5.0.1
   resolution: "json-stringify-safe@npm:5.0.1"
   checksum: 261dfb8eb3e72c8b0dda11fd7c20c151ffc1d1b03e529245d51708c8dd8d8c6a225880464adf41a570dff6e5c805fd9d1f47fed948cfb526e4fbe5a67ce4e5f4
@@ -5770,6 +5770,13 @@ __metadata:
   version: 4.4.0
   resolution: "lodash.flatten@npm:4.4.0"
   checksum: f22a7f6f163256d87345b07c76122e03d03abbf943b6c3aa5e5fafb7d5bce765013aedfc2aae7e649af0907287a2cf85de24237dbdd3ecd485a77d56e070b54c
+  languageName: node
+  linkType: hard
+
+"lodash.set@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "lodash.set@npm:4.3.2"
+  checksum: 4dfedacae1c1cf86385a2b6e30ba538f06c90d703a0abd83a11432d80ec24b4016fe27359cdc0554a02a31a468789cbb282801dd755e54581cf0295477e2341d
   languageName: node
   linkType: hard
 
@@ -6119,6 +6126,29 @@ __metadata:
   version: 1.0.5
   resolution: "nice-try@npm:1.0.5"
   checksum: 330f190bf68146a560008b661e1ddbb2eac667c16990b6bf791516d89cceb707ec67901ad647d2b32674bfa816b916489cead5c2fb6e96864c659573ab5aa3bb
+  languageName: node
+  linkType: hard
+
+"nock-record@npm:^0.3.9":
+  version: 0.3.9
+  resolution: "nock-record@npm:0.3.9"
+  dependencies:
+    stack-trace: ^0.0.10
+  peerDependencies:
+    nock: 11 - 13
+  checksum: 78ab46d7ad8682f4c8ea28edcbeea4496d6de8b6d70a69f7e66df2a37335009bb25ec9485b49ff9f5e9113dc36d99054da4ec5c180d1b34001ca84f9311c570c
+  languageName: node
+  linkType: hard
+
+"nock@npm:^13.0.11":
+  version: 13.0.11
+  resolution: "nock@npm:13.0.11"
+  dependencies:
+    debug: ^4.1.0
+    json-stringify-safe: ^5.0.1
+    lodash.set: ^4.3.2
+    propagate: ^2.0.0
+  checksum: 75aca1f14036e9ba6aaa03813b83d1685cd3f2268b154b30ab9f5f00719958140a9d0b1e5f4f420da4e1e6d9fa14f193fc4df68b007d49d7a749dc6fd1646071
   languageName: node
   linkType: hard
 
@@ -6761,6 +6791,13 @@ __metadata:
     kleur: ^3.0.3
     sisteransi: ^1.0.5
   checksum: 705eae8c359edd7c5ba47404ef349d239334ebde0f55420588dd98449c52b38e35b52800ef55ad5804bb8c3b98b3b834beb749813f89e896d058ee18aa0d6c2c
+  languageName: node
+  linkType: hard
+
+"propagate@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "propagate@npm:2.0.1"
+  checksum: dd67518106bb3f1ee230b7e246a18285467e010b89703844f120c38e1462b52d79bddd4be0f8db080377a3d55218209674eae9eb672c29a033bf6b44cfc42828
   languageName: node
   linkType: hard
 
@@ -7564,6 +7601,13 @@ __metadata:
   dependencies:
     minipass: ^3.1.1
   checksum: d45f9a1d5676f8ebd888a3ae469772d75858e4095087217c2361a6b07a6eefd5a85350bb0fed63128b0025fdf242e81813be0979e6cb956a38dbf26295dca09c
+  languageName: node
+  linkType: hard
+
+"stack-trace@npm:^0.0.10":
+  version: 0.0.10
+  resolution: "stack-trace@npm:0.0.10"
+  checksum: 8e567bd9dc88f739f562e91d127cfe11740c3639900c9ddadbb3d78399171fd7236d8a7622f5a00047c162ec64e1f1869cf45daac11e4482e54ac2d98f8c3391
   languageName: node
   linkType: hard
 
@@ -8555,6 +8599,8 @@ typescript@^4.2.4:
     eslint-plugin-jest: ^24.3.6
     jest: ^26.6.3
     js-yaml: ^4.1.0
+    nock: ^13.0.11
+    nock-record: ^0.3.9
     node-fetch: ^2.6.1
     prettier: ^2.2.1
     typescript: ^4.2.4
