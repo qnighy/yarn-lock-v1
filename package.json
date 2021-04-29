@@ -11,6 +11,9 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json && babel src -d dist -x .ts --ignore \"src/**/*.test.ts\"",
+    "fmt": "$npm_execpath run fmt:runprettier -w",
+    "fmt:check": "$npm_execpath run fmt:runprettier -c",
+    "fmt:runprettier": "prettier \"src/**/*.ts\" .babelrc.js tsconfig.json tsconfig.build.json",
     "prepack": "$npm_execpath run build",
     "start": "$npm_node_execpath dist/index.js",
     "start:dev": "babel-node -x .ts -- src/index.ts",
@@ -38,6 +41,7 @@
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
+    "prettier": "^2.2.1",
     "typescript": "^4.2.4"
   }
 }

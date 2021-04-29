@@ -9,10 +9,12 @@ import { convertLockfile, Fetcher } from "./convert";
 const cacheRoot = path.resolve(__dirname, "./__fixtures__/caches");
 const mockedFetch: Fetcher = async (url) => {
   const parsedUrl = new URL(url);
-  if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+  if (parsedUrl.protocol !== "http:" && parsedUrl.protocol !== "https:") {
     throw new FetchError(`request to ${url} failed`, "");
   }
-  const parts = [parsedUrl.hostname, ...parsedUrl.pathname.split("/")].map((part) => encodeURIComponent(part)).filter((part) => !/^(?:|\..*)$/.test(part));
+  const parts = [parsedUrl.hostname, ...parsedUrl.pathname.split("/")]
+    .map((part) => encodeURIComponent(part))
+    .filter((part) => !/^(?:|\..*)$/.test(part));
   const cachePath = path.resolve(cacheRoot, ...parts);
   if (fs.existsSync(cachePath)) {
     return new Response(await fs.promises.readFile(cachePath));
@@ -28,12 +30,15 @@ const mockedFetch: Fetcher = async (url) => {
   const body = await resp.arrayBuffer();
   fs.promises.writeFile(cachePath, new Uint8Array(body));
   return new Response(body);
-}
+};
 
 describe("convertLockfile", () => {
   it("convers normal dependencies", async () => {
-    const lockV2 = fs.readFileSync(path.resolve(__dirname, "./__fixtures__/yarn-lock1.txt"), "utf-8");
+    const lockV2 = fs.readFileSync(
+      path.resolve(__dirname, "./__fixtures__/yarn-lock1.txt"),
+      "utf-8"
+    );
     const lockV1 = await convertLockfile(lockV2, { fetch: mockedFetch });
     expect(lockV1).toMatchSnapshot("yarn-lock1");
-  })
+  });
 });
