@@ -1,4 +1,4 @@
-import { describe, expect, it, jest } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import fs from "fs";
 import nodeFetch, { FetchError, Response } from "node-fetch";
 import { URL } from "url";
@@ -28,7 +28,7 @@ const mockedFetch: Fetcher = async (url) => {
   }
   await fs.promises.mkdir(path.dirname(cachePath), { recursive: true });
   const body = await resp.arrayBuffer();
-  fs.promises.writeFile(cachePath, new Uint8Array(body));
+  await fs.promises.writeFile(cachePath, new Uint8Array(body));
   return new Response(body);
 };
 

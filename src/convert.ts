@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import yaml from "js-yaml";
 import https from "https";
 import nodeFetch, { Headers, Response } from "node-fetch";
@@ -28,7 +31,9 @@ export async function convertLockfile(
   lockV2: string,
   options: Options = {}
 ): Promise<string> {
-  let cleanup: () => void = () => {};
+  let cleanup: () => void = () => {
+    /* do nothing */
+  };
   let fetch: Fetcher;
   if (options.fetch) {
     fetch = options.fetch;
@@ -153,12 +158,15 @@ async function convertResolution(
       let anchor = "";
       let integrity: string | null = null;
       try {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const packageInfo = await requestRegistry(
           `https://registry.yarnpkg.com/${packageName}/${version}`,
           yarnrc,
           fetch
         );
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         anchor = `#${packageInfo.dist.shasum}`;
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         integrity = packageInfo.dist.integrity;
         if (!integrity && packageInfo.dist.shasum) {
           const bytes = Array.from(
@@ -205,6 +213,7 @@ async function requestRegistry(
   if (!npmAlwaysAuth || !hasAuth) {
     const resp = await fetch(url);
     if (resp.ok) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       return await resp.json();
     } else if (!hasAuth || resp.status !== 401) {
       throw new Error(`Got ${resp.status} from ${resp.url}`);
@@ -221,6 +230,7 @@ async function requestRegistry(
     if (!resp.ok) {
       throw new Error(`Got ${resp.status} from ${resp.url}`);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return await resp.json();
   } else {
     const resp = await fetch(url, {
@@ -231,6 +241,7 @@ async function requestRegistry(
     if (!resp.ok) {
       throw new Error(`Got ${resp.status} from ${resp.url}`);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return await resp.json();
   }
 }
