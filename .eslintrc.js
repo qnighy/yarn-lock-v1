@@ -22,7 +22,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: [".eslintrc.js", ".babelrc.js"],
+      files: [".eslintrc.js", ".babelrc.js", "jest.config.js"],
       env: {
         node: true,
       },
