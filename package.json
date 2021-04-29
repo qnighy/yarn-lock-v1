@@ -14,7 +14,7 @@
     "fmt": "$npm_execpath run fmt:runprettier -w",
     "fmt:check": "$npm_execpath run fmt:runprettier -c",
     "fmt:runprettier": "prettier \"src/**/*.ts\" .babelrc.js .eslintrc.js jest.config.js tsconfig.json tsconfig.build.json",
-    "lint": "eslint \"src/**/*.ts\" .babelrc.js .eslintrc.js jest.config.js --ignore-pattern \"!.babelrc.js\"",
+    "lint": "eslint . --ext .js,.ts",
     "lint:fix": "$npm_execpath run lint --fix",
     "prepack": "$npm_execpath run build",
     "start": "$npm_node_execpath dist/index.js",

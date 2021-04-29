@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "rootDir": "."
-  },
-  "include": ["src/**/*.ts", ".babelrc.js", ".eslintrc.js", "jest.config.js"]
-}

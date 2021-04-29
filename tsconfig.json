@@ -3,8 +3,9 @@
     "target": "esnext",
     "module": "commonjs",
     "lib": ["ESNext"],
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "allowJs": true,
+    "checkJs": true,
+    "rootDir": ".",
     "composite": true,
     "isolatedModules": true,
     "strict": true,
@@ -13,5 +14,7 @@
     "skipLibCheck": true,
     "noEmit": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": ["dist"],
+  "include": ["**/*", ".babelrc.js", ".eslintrc.js"]
 }

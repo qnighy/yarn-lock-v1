@@ -1,7 +1,7 @@
 module.exports = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "tsconfig.lint.json",
+    project: "tsconfig.json",
   },
   extends: [
     "eslint:recommended",
@@ -10,6 +10,7 @@ module.exports = {
     "plugin:jest/recommended",
     "prettier",
   ],
+  ignorePatterns: ["dist/**/*", "!.babelrc.js"],
   rules: {
     "@typescript-eslint/no-unused-vars": [
       "warn",
