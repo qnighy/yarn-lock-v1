@@ -10,10 +10,12 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc && babel src -d dist -x .ts",
+    "build": "tsc -p tsconfig.build.json && babel src -d dist -x .ts --ignore \"src/**/*.test.ts\"",
     "prepack": "$npm_execpath run build",
     "start": "$npm_node_execpath dist/index.js",
-    "start:dev": "babel-node -x .ts -- src/index.ts"
+    "start:dev": "babel-node -x .ts -- src/index.ts",
+    "test": "jest",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.13.17",
@@ -28,11 +30,14 @@
     "@babel/plugin-transform-runtime": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-typescript": "^7.13.0",
+    "@jest/globals": "^26.6.2",
     "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.41",
     "@types/node-fetch": "^2.5.10",
     "@types/yargs": "^16.0.1",
     "@yarnpkg/pnpify": "^3.0.0-rc.3",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
     "typescript": "^4.2.4"
   }
 }
