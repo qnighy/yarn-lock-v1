@@ -37,6 +37,8 @@
     "@babel/preset-typescript": "^7.13.0",
     "@jest/globals": "^26.6.2",
     "@jest/types": "^26.6.2",
+    "@types/babel__core": "^7.1.14",
+    "@types/eslint": "^7.2.10",
     "@types/js-yaml": "^4.0.1",
     "@types/node": "^15.0.1",
     "@types/node-fetch": "^2.5.10",
