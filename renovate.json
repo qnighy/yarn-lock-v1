@@ -11,7 +11,8 @@
     {
       "matchPaths": ["package.json"],
       "enabled": true,
-      "rangeStrategy": "bump"
+      "rangeStrategy": "bump",
+      "postUpdateOptions": ["yarnDedupeHighest"]
     }
   ]
 }
