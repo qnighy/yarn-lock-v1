@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stringify doesn't unify equivalent objects 1`] = `
+"foo:
+  bar:
+    something 42
+  foo:
+    something 42
+"
+`;
+
+exports[`stringify doesn't unify same primitives 1`] = `
+"foo:
+  bar 42
+  foo 42
+"
+`;
+
+exports[`stringify stringifies an empty object 1`] = `""`;
+
+exports[`stringify stringifies an object with a single key 1`] = `
+"foo:
+"
+`;
+
+exports[`stringify stringifies package info 1`] = `
+"call-bind@^1.0.2:
+  version \\"1.0.2\\"
+  resolved \\"https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c\\"
+  integrity sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==
+  dependencies:
+    function-bind \\"^1.1.1\\"
+    get-intrinsic \\"^1.0.2\\"
+
+has-symbols@^1.0.1:
+  version \\"1.0.2\\"
+  resolved \\"https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423\\"
+  integrity sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==
+
+is-regex@^1.1.2:
+  version \\"1.1.2\\"
+  resolved \\"https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.2.tgz#81c8ebde4db142f2cf1c53fc86d6a45788266251\\"
+  integrity sha512-axvdhb5pdhEVThqJzYXwMlVuZwC+FF2DpcOhTS+y/8jVq4trxyPgfcwIxIKiyeuLlSQYKkmUaPQJ8ZE4yNKXDg==
+  dependencies:
+    call-bind \\"^1.0.2\\"
+    has-symbols \\"^1.0.1\\"
+"
+`;
+
+exports[`stringify stringifies simple values 1`] = `
+"foo:
+  boolean false
+  numeric 42
+  s baz
+  s2 \\"baz baz\\"
+  sboolean \\"true\\"
+  snumeric \\"42\\"
+"
+`;
+
+exports[`stringify unifies identical objects 1`] = `
+"foo:
+  bar, foo:
+    something 42
+"
+`;
