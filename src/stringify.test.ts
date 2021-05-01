@@ -33,8 +33,10 @@ describe("stringify", () => {
     const s = stringify({
       "call-bind@^1.0.2": {
         version: "1.0.2",
-        resolved: "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c",
-        integrity: "sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==",
+        resolved:
+          "https://registry.yarnpkg.com/call-bind/-/call-bind-1.0.2.tgz#b1d4e89e688119c3c9a903ad30abb2f6a919be3c",
+        integrity:
+          "sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==",
         dependencies: {
           "function-bind": "^1.1.1",
           "get-intrinsic": "^1.0.2",
@@ -42,13 +44,17 @@ describe("stringify", () => {
       },
       "has-symbols@^1.0.1": {
         version: "1.0.2",
-        resolved: "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423",
-        integrity: "sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==",
+        resolved:
+          "https://registry.yarnpkg.com/has-symbols/-/has-symbols-1.0.2.tgz#165d3070c00309752a1236a479331e3ac56f1423",
+        integrity:
+          "sha512-chXa79rL/UC2KlX17jo3vRGz0azaWEx5tGqZg5pO3NUyEJVB17dMruQlzCCOfUvElghKcm5194+BCRvi2Rv/Gw==",
       },
       "is-regex@^1.1.2": {
         version: "1.1.2",
-        resolved: "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.2.tgz#81c8ebde4db142f2cf1c53fc86d6a45788266251",
-        integrity: "sha512-axvdhb5pdhEVThqJzYXwMlVuZwC+FF2DpcOhTS+y/8jVq4trxyPgfcwIxIKiyeuLlSQYKkmUaPQJ8ZE4yNKXDg==",
+        resolved:
+          "https://registry.yarnpkg.com/is-regex/-/is-regex-1.1.2.tgz#81c8ebde4db142f2cf1c53fc86d6a45788266251",
+        integrity:
+          "sha512-axvdhb5pdhEVThqJzYXwMlVuZwC+FF2DpcOhTS+y/8jVq4trxyPgfcwIxIKiyeuLlSQYKkmUaPQJ8ZE4yNKXDg==",
         dependencies: {
           "call-bind": "^1.0.2",
           "has-symbols": "^1.0.1",
@@ -63,7 +69,7 @@ describe("stringify", () => {
       foo: {
         foo: 42,
         bar: 42,
-      }
+      },
     });
     expect(s).toMatchSnapshot();
   });
@@ -73,7 +79,7 @@ describe("stringify", () => {
       foo: {
         foo: { something: 42 },
         bar: { something: 42 },
-      }
+      },
     });
     expect(s).toMatchSnapshot();
   });
@@ -84,7 +90,7 @@ describe("stringify", () => {
       foo: {
         foo: obj,
         bar: obj,
-      }
+      },
     });
     expect(s).toMatchSnapshot();
   });

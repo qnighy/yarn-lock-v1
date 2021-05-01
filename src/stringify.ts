@@ -9,7 +9,12 @@ export function stringify(obj: object): string {
   return lines.join("");
 }
 
-function stringifyPush(obj: object, indent: string, topLevel: boolean, lines: string[]) {
+function stringifyPush(
+  obj: object,
+  indent: string,
+  topLevel: boolean,
+  lines: string[]
+) {
   const identicalKeys = new Map<object, string[]>();
   for (const [k, v] of Object.entries(obj)) {
     if (typeof v === "object" && v !== null) {
@@ -26,7 +31,9 @@ function stringifyPush(obj: object, indent: string, topLevel: boolean, lines: st
     }
     isFirst = false;
   };
-  for (const [primaryKey, v] of sortEntriesWithPriority<unknown>(Object.entries(obj))) {
+  for (const [primaryKey, v] of sortEntriesWithPriority<unknown>(
+    Object.entries(obj)
+  )) {
     switch (typeof v) {
       case "boolean":
       case "number":
@@ -87,8 +94,12 @@ export function sortWithPriority(keys: string[]): string[] {
 }
 
 function cmpWithPriority(a: string, b: string): number {
-  const ap = Object.prototype.hasOwnProperty.call(priorities, a) ? priorities[a] : 100;
-  const bp = Object.prototype.hasOwnProperty.call(priorities, b) ? priorities[b] : 100;
+  const ap = Object.prototype.hasOwnProperty.call(priorities, a)
+    ? priorities[a]
+    : 100;
+  const bp = Object.prototype.hasOwnProperty.call(priorities, b)
+    ? priorities[b]
+    : 100;
   if (ap !== bp) return ap - bp;
   return cmpAlpha(a, b);
 }

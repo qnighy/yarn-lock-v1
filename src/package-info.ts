@@ -17,5 +17,6 @@ export function assertPackageInfo(obj: unknown): asserts obj is PackageInfo {
 function assertPackageDist(obj: unknown): asserts obj is PackageDist {
   assertObject(obj, "package.dist");
   if (obj.shasum !== undefined) assertString(obj.shasum, "package.dist.shasum");
-  if (obj.integrity !== undefined) assertString(obj.integrity, "package.dist.integrity");
+  if (obj.integrity !== undefined)
+    assertString(obj.integrity, "package.dist.integrity");
 }
