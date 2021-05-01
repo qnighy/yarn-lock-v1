@@ -46,7 +46,6 @@ export async function convertLockfile(
     fetch = options.fetch;
   } else {
     const agent = new https.Agent({ keepAlive: true, maxTotalSockets: 10 });
-    nodeFetch.isRedirect;
     fetch = (url, init = {}) => nodeFetch(url, { ...init, agent });
     cleanup = () => {
       agent.destroy();
