@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import yaml from "js-yaml";
 import https from "https";
 import nodeFetch, { Headers, Response } from "node-fetch";
 
 import { stringify } from "./stringify";
 import { V1LockfileObject, V1LockManifest } from "./v1lock";
+import { assertLockfileShallow, assertManifest, V2Dependencies, V2DependenciesMeta } from "./v2lock";
+import { assertPackageInfo } from "./package-info";
 
 interface Options {
   yarnrc?: YarnRc;
@@ -59,10 +58,12 @@ async function convertLockfileInner(
   options: Options = {}
 ): Promise<string> {
   const { yarnrc = {} } = options;
-  const lockV2Obj = yaml.load(lockV2);
+  const lockV2Obj: unknown = yaml.load(lockV2);
   const lockV1Obj: V1LockfileObject = {};
 
-  const clausePromises = Object.entries(lockV2Obj as object).map(
+  assertLockfileShallow(lockV2Obj);
+
+  const clausePromises = Object.entries(lockV2Obj).map(
     async ([packageKey, packageData]) => {
       if (packageKey === "__metadata") return;
       if (/@(?:patch|workspace):/.test(packageKey)) return;
@@ -89,31 +90,24 @@ async function convertEntry(lockV1: V1LockfileObject, keyV2: string, manifestV2:
 }
 
 async function convertManifest(manifestV2: unknown, yarnrc: YarnRc, fetch: Fetcher): Promise<V1LockManifest> {
+  assertManifest(manifestV2);
   const manifest: V1LockManifest = {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    version: (manifestV2 as any).version,
+    version: manifestV2.version,
   };
-  convertDependencies((manifestV2 as any).dependencies, (manifestV2 as any).dependenciesMeta, manifest);
-  await convertResolution((manifestV2 as any).resolution, manifest, yarnrc, fetch);
+  convertDependencies(manifestV2.dependencies, manifestV2.dependenciesMeta, manifest);
+  if (manifestV2.resolution) await convertResolution(manifestV2.resolution, manifest, yarnrc, fetch);
   return manifest;
 }
 
 function convertDependencies(
-  dependencies_: unknown,
-  dependenciesMeta_: unknown,
+  dependencies: V2Dependencies = {},
+  dependenciesMeta: V2DependenciesMeta = {},
   manifestV1: V1LockManifest,
 ) {
-  let dependencies: object = {};
-  if (typeof dependencies_ === "object" && dependencies_ !== null)
-    dependencies = dependencies_;
-  let dependenciesMeta: object = {};
-  if (typeof dependenciesMeta_ === "object" && dependenciesMeta_ !== null)
-    dependenciesMeta = dependenciesMeta_;
-
   const isOptional = (pkg: string) =>
     Boolean(
       Object.prototype.hasOwnProperty.call(dependenciesMeta, pkg) &&
-        (dependenciesMeta as any)[pkg]?.optional
+        dependenciesMeta[pkg]?.optional
     );
 
   for (const [depKey, depValue] of Object.entries(dependencies)) {
@@ -137,19 +131,17 @@ async function convertResolution(
       const version = protocolValue;
       let anchor = "";
       try {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         const packageInfo = await requestRegistry(
           `https://registry.yarnpkg.com/${packageName}/${version}`,
           yarnrc,
           fetch
         );
-        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-        anchor = `#${packageInfo.dist.shasum}`;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        manifestV1.integrity = packageInfo.dist.integrity;
-        if (!manifestV1.integrity && packageInfo.dist.shasum) {
+        assertPackageInfo(packageInfo);
+        if (packageInfo.dist?.shasum) anchor = `#${packageInfo.dist.shasum}`;
+        manifestV1.integrity = packageInfo.dist?.integrity;
+        if (!manifestV1.integrity && packageInfo.dist?.shasum) {
           const bytes = Array.from(
-            (packageInfo.dist.shasum as string).matchAll(/[0-9a-f]{2}/gi)
+            packageInfo.dist.shasum.matchAll(/[0-9a-f]{2}/gi)
           ).map(([text]) => parseInt(text, 16));
           manifestV1.integrity = `sha1-${Buffer.from(bytes).toString("base64")}`;
         }
@@ -168,7 +160,7 @@ async function requestRegistry(
   url: string,
   yarnrc: YarnRc,
   fetch: Fetcher
-): Promise<any> {
+): Promise<unknown> {
   let registryConfig: RegistryConfig = yarnrc;
   const { npmRegistries = {} } = yarnrc;
   for (const [regMatcher, regConfig] of Object.entries(npmRegistries)) {
