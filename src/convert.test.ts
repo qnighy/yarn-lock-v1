@@ -21,7 +21,7 @@ describe("convertLockfile", () => {
       "utf-8"
     );
     const lockV1 = await convertLockfile(lockV2);
-    expect(lockV1).toMatchSnapshot("yarn-lock1");
+    expect(lockV1).toMatchSnapshot();
 
     completeRecording();
     assertScopesFinished();
@@ -37,7 +37,7 @@ describe("convertLockfile", () => {
       "utf-8"
     );
     const lockV1 = await convertLockfile(lockV2);
-    expect(lockV1).toMatchSnapshot("yarn-lock2");
+    expect(lockV1).toMatchSnapshot();
 
     completeRecording();
     assertScopesFinished();
@@ -63,7 +63,7 @@ describe("convertLockfile", () => {
       "utf-8"
     );
     const lockV1 = await convertLockfile(lockV2, { fetch, interaction });
-    expect(lockV1).toMatchSnapshot("yarn-lock1-offline");
+    expect(lockV1).toMatchSnapshot();
 
     completeRecording();
     assertScopesFinished();
@@ -101,7 +101,7 @@ describe("convertLockfile", () => {
       "utf-8"
     );
     const lockV1 = await convertLockfile(lockV2, { fetch, interaction, yarnrc: { npmAuthToken: token } });
-    expect(lockV1).toMatchSnapshot("yarn-lock1-offline");
+    expect(lockV1).toMatchSnapshot();
 
     completeRecording();
     assertScopesFinished();
