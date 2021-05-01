@@ -83,7 +83,10 @@ describe("convertLockfile", () => {
         if (headers.get("Authorization") === `Bearer ${token}`) {
           return nodeFetch(url);
         } else {
-          return new Response("", { status: headers.get("Authorization") ? 403 : 401, url });
+          return new Response("", {
+            status: headers.get("Authorization") ? 403 : 401,
+            url,
+          });
         }
       } else {
         return nodeFetch(url);
@@ -100,7 +103,11 @@ describe("convertLockfile", () => {
       path.resolve(__dirname, "./__fixtures__/yarn-lock1.txt"),
       "utf-8"
     );
-    const lockV1 = await convertLockfile(lockV2, { fetch, interaction, yarnrc: { npmAuthToken: token } });
+    const lockV1 = await convertLockfile(lockV2, {
+      fetch,
+      interaction,
+      yarnrc: { npmAuthToken: token },
+    });
     expect(lockV1).toMatchSnapshot();
 
     completeRecording();
