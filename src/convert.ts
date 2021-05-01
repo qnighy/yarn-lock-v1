@@ -12,9 +12,20 @@ import {
 } from "./v2lock";
 import { assertPackageInfo } from "./package-info";
 
+export interface Interaction {
+  warn(msg: string): void;
+}
+
+const defaultInteraction: Interaction = {
+  warn(msg) {
+    console.warn(msg);
+  },
+};
+
 interface Options {
   yarnrc?: YarnRc;
   fetch?: Fetcher;
+  interaction?: Interaction;
 }
 export type Fetcher = (
   url: string,
@@ -61,7 +72,7 @@ async function convertLockfileInner(
   fetch: Fetcher,
   options: Options = {}
 ): Promise<string> {
-  const { yarnrc = {} } = options;
+  const { yarnrc = {}, interaction = defaultInteraction } = options;
   const lockV2Obj: unknown = yaml.load(lockV2);
   const lockV1Obj: V1LockfileObject = {};
 
@@ -72,7 +83,14 @@ async function convertLockfileInner(
       if (packageKey === "__metadata") return;
       if (/@(?:patch|workspace):/.test(packageKey)) return;
 
-      await convertEntry(lockV1Obj, packageKey, packageData, yarnrc, fetch);
+      await convertEntry(
+        lockV1Obj,
+        packageKey,
+        packageData,
+        yarnrc,
+        fetch,
+        interaction
+      );
     }
   );
 
@@ -92,9 +110,15 @@ async function convertEntry(
   keyV2: string,
   manifestV2: unknown,
   yarnrc: YarnRc,
-  fetch: Fetcher
+  fetch: Fetcher,
+  interaction: Interaction
 ): Promise<void> {
-  const manifestV1 = await convertManifest(manifestV2, yarnrc, fetch);
+  const manifestV1 = await convertManifest(
+    manifestV2,
+    yarnrc,
+    fetch,
+    interaction
+  );
 
   for (const k of keyV2.split(", ")) {
     lockV1[k.replace("@npm:", "@")] = manifestV1;
@@ -104,7 +128,8 @@ async function convertEntry(
 async function convertManifest(
   manifestV2: unknown,
   yarnrc: YarnRc,
-  fetch: Fetcher
+  fetch: Fetcher,
+  interaction: Interaction
 ): Promise<V1LockManifest> {
   assertManifest(manifestV2);
   const manifest: V1LockManifest = {
@@ -116,7 +141,13 @@ async function convertManifest(
     manifest
   );
   if (manifestV2.resolution)
-    await convertResolution(manifestV2.resolution, manifest, yarnrc, fetch);
+    await convertResolution(
+      manifestV2.resolution,
+      manifest,
+      yarnrc,
+      fetch,
+      interaction
+    );
   return manifest;
 }
 
@@ -144,7 +175,8 @@ async function convertResolution(
   resolutionV2: string,
   manifestV1: V1LockManifest,
   yarnrc: YarnRc,
-  fetch: Fetcher
+  fetch: Fetcher,
+  interaction: Interaction
 ): Promise<void> {
   const [packageName, packageResolution] = resolutionV2.split(/(?!^@)@/, 2);
   const packageBaseName = packageName.split("/").reverse()[0];
@@ -171,7 +203,11 @@ async function convertResolution(
           )}`;
         }
       } catch (e) {
-        console.warn(`Error reading ${packageName}/${version}`, e);
+        interaction.warn(
+          `Error reading ${packageName}/${version}: ${
+            e instanceof Error ? e.message : ""
+          }`
+        );
       }
       manifestV1.resolved = `https://registry.yarnpkg.com/${packageName}/-/${packageBaseName}-${version}.tgz${anchor}`;
       break;
