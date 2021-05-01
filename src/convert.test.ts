@@ -25,4 +25,20 @@ describe("convertLockfile", () => {
     completeRecording();
     assertScopesFinished();
   });
+
+  it("converts confluent dependencies", async () => {
+    const { completeRecording, assertScopesFinished } = await record(
+      "yarn-lock2"
+    );
+
+    const lockV2 = fs.readFileSync(
+      path.resolve(__dirname, "./__fixtures__/yarn-lock2.txt"),
+      "utf-8"
+    );
+    const lockV1 = await convertLockfile(lockV2);
+    expect(lockV1).toMatchSnapshot("yarn-lock2");
+
+    completeRecording();
+    assertScopesFinished();
+  });
 });
