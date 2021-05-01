@@ -64,3 +64,12 @@ exports[`stringify unifies identical objects 1`] = `
     something 42
 "
 `;
+
+exports[`stringify unifies identical toplevel objects 1`] = `
+"foo@^0.1.0, foo@^0.1.1:
+  version \\"0.1.2\\"
+
+foo@^0.2.0:
+  version \\"0.2.0\\"
+"
+`;

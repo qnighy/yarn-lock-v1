@@ -88,6 +88,20 @@ describe("stringify", () => {
     });
     expect(s).toMatchSnapshot();
   });
+
+  it("unifies identical toplevel objects", () => {
+    const obj = {
+      version: "0.1.2",
+    };
+    const s = stringify({
+      "foo@^0.1.0": obj,
+      "foo@^0.1.1": obj,
+      "foo@^0.2.0": {
+        version: "0.2.0",
+      },
+    });
+    expect(s).toMatchSnapshot();
+  });
 });
 
 describe("wrapKey", () => {

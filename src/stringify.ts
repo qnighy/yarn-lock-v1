@@ -20,12 +20,20 @@ function stringifyPush(obj: object, indent: string, topLevel: boolean, lines: st
   }
 
   let isFirst = true;
+  const addSeparator = () => {
+    if (!isFirst && topLevel) {
+      lines.push("\n");
+    }
+    isFirst = false;
+  };
   for (const [primaryKey, v] of sortEntriesWithPriority<unknown>(Object.entries(obj))) {
     switch (typeof v) {
       case "boolean":
       case "number":
       case "string":
-        break;
+        addSeparator();
+        lines.push(`${indent}${wrapKey(primaryKey)} ${wrapKey(v)}\n`);
+        continue;
       case "function":
       case "object":
         if (v === null) continue;
@@ -37,21 +45,12 @@ function stringifyPush(obj: object, indent: string, topLevel: boolean, lines: st
         throw new Error(`Cannot stringify ${typeof v}`);
     }
 
-    if (!isFirst && topLevel) {
-      lines.push("\n");
-    }
-    isFirst = false;
-
-    if (typeof v === "boolean" || typeof v === "number" || typeof v === "string") {
-      lines.push(`${indent}${wrapKey(primaryKey)} ${wrapKey(v)}\n`);
-      continue;
-    }
-
     const keys = identicalKeys.get(v);
     if (keys === undefined) continue;
     identicalKeys.delete(v);
 
     const joinedKeys = keys.sort().map(wrapKey).join(", ");
+    addSeparator();
     lines.push(`${indent}${joinedKeys}:\n`);
     stringifyPush(v, indent + INDENT, false, lines);
   }
