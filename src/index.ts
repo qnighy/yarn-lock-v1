@@ -42,8 +42,8 @@ const V1_HEADER =
     throw new Error("yarn.lock is already v1");
   }
   const lockV1 = await convertLockfile(lockV2, { yarnrc });
-  if (inputPath === outputPath) {
-    await fs.promises.copyFile(inputPath, `${inputPath}.bak`);
+  if (fs.existsSync(outputPath)) {
+    await fs.promises.copyFile(outputPath, `${outputPath}.bak`);
   }
   await fs.promises.writeFile(outputPath, lockV1);
 })().catch((e) => {

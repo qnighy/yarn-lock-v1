@@ -13,9 +13,9 @@ With `yarn-lock-v1` you can say "don't worry, we can always go back to Yarn V1 i
 $ npx yarn-lock-v1
 ```
 
-By default, `yarn-lock-v1` backs up your `yarn.lock` and replaces it with the one in V1 format.
+`yarn-lock-v1` automatically generates a back up if the destination (`yarn.lock` by default) already exists.
 
-You can specify a different input or a different output. If the output path is different from the input path, no backup is generated.
+You can specify a different input or a different output.
 
 ```
 $ npx yarn-lock-v1 -f yarn.lock.v2 -o yarn.lock.v1
