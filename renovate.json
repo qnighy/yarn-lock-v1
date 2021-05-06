@@ -11,6 +11,7 @@
     {
       "matchPaths": ["package.json"],
       "enabled": true,
+      "labels": ["dependencies", "javascript"],
       "rangeStrategy": "bump",
       "postUpdateOptions": ["yarnDedupeHighest"]
     }
