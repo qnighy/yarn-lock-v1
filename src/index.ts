@@ -4,7 +4,11 @@ import yargs from "yargs";
 import yaml from "js-yaml";
 import { convertLockfile, YarnRc } from "./convert";
 
-const { f: inputPath, o: outputPath, c: yarnrcPath } = yargs
+const {
+  f: inputPath,
+  o: outputPath,
+  c: yarnrcPath,
+} = yargs
   .scriptName("yarn-lock-v1")
   .option("f", {
     alias: "file",
