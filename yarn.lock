@@ -1866,10 +1866,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^15.0.2":
-  version: 15.0.2
-  resolution: "@types/node@npm:15.0.2"
-  checksum: ea8dd741bf16ad3318cca505783b7c211a5c8bea49202f99ba88d2ce8a804e994e1fd1b575b994e434e8b8ead810da966d588ea112998f8fe8d95cd74c396f8a
+"@types/node@npm:*, @types/node@npm:^15.0.3":
+  version: 15.0.3
+  resolution: "@types/node@npm:15.0.3"
+  checksum: 72bfbac4282443a7b5d5b43c7c39fe855aa1687b5fa5629b735fd2ceacf371b711ccfc956c8af1b1cbd9c74c79be845a801a4c7275048f340aa0df3beec6b10f
   languageName: node
   linkType: hard
 
@@ -8640,7 +8640,7 @@ typescript@^4.2.4:
     "@types/babel__core": ^7.1.14
     "@types/eslint": ^7.2.10
     "@types/js-yaml": ^4.0.1
-    "@types/node": ^15.0.2
+    "@types/node": ^15.0.3
     "@types/node-fetch": ^2.5.10
     "@types/yargs": ^16.0.1
     "@typescript-eslint/eslint-plugin": ^4.23.0
