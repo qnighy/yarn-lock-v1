@@ -2,7 +2,6 @@
 const config = {
   rootDir: "src",
   setupFilesAfterEnv: ["../jest.setup.js"],
-  testEnvironment: "node",
 };
 
 module.exports = config;
