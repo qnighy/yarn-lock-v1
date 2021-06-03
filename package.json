@@ -50,7 +50,7 @@
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^24.3.6",
-    "jest": "^27.0.3",
+    "jest": "^27.0.4",
     "nock": "^13.1.0",
     "nock-record": "^0.3.9",
     "prettier": "^2.3.0",
