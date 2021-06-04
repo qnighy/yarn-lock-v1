@@ -45,7 +45,7 @@
     "@types/yargs": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
-    "@yarnpkg/pnpify": "^3.0.0-rc.3",
+    "@yarnpkg/pnpify": "^3.0.0-rc.6",
     "babel-jest": "^27.0.2",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
