@@ -38,7 +38,7 @@
     "@jest/globals": "^27.0.6",
     "@jest/types": "^27.0.6",
     "@types/babel__core": "^7.1.14",
-    "@types/eslint": "^7.2.13",
+    "@types/eslint": "^7.2.14",
     "@types/js-yaml": "^4.0.1",
     "@types/node": "^15.3.1",
     "@types/node-fetch": "^2.5.10",
