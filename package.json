@@ -42,7 +42,7 @@
     "@types/js-yaml": "^4.0.1",
     "@types/node": "^15.3.1",
     "@types/node-fetch": "^2.5.11",
-    "@types/yargs": "^17.0.1",
+    "@types/yargs": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "@yarnpkg/pnpify": "^3.0.0-rc.7",

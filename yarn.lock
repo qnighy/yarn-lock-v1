@@ -1946,12 +1946,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/yargs@npm:^17.0.1":
-  version: 17.0.1
-  resolution: "@types/yargs@npm:17.0.1"
+"@types/yargs@npm:^17.0.2":
+  version: 17.0.2
+  resolution: "@types/yargs@npm:17.0.2"
   dependencies:
     "@types/yargs-parser": "*"
-  checksum: a5d3266120661211426b3941f907d4c147c6dd6da80798b121ef1e50a86966ac87b45de728e3b279ef0e241590fe081f73e1c3f69f53a91cf33eeaddc52d3855
+  checksum: b3dec3703ad5b9d3e8d5f485abf89bbdc601ec0dd2a1156176ffbe9212a1b693c22e7a29430de0e33aac15e71afefa36846f5ad9976a957006e275335a79d2a6
   languageName: node
   linkType: hard
 
@@ -8002,7 +8002,7 @@ typescript@^4.2.4:
     "@types/js-yaml": ^4.0.1
     "@types/node": ^15.3.1
     "@types/node-fetch": ^2.5.11
-    "@types/yargs": ^17.0.1
+    "@types/yargs": ^17.0.2
     "@typescript-eslint/eslint-plugin": ^4.28.2
     "@typescript-eslint/parser": ^4.28.2
     "@yarnpkg/pnpify": ^3.0.0-rc.7
