@@ -1846,10 +1846,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/js-yaml@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@types/js-yaml@npm:4.0.1"
-  checksum: fd8985289c713e3b2a494d6c243139c94bdda856af60346cf0c0da25bd6289e0165d367e623202b8cdfab7cef73a424a183282063beb0c0823d152dbec6d4959
+"@types/js-yaml@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@types/js-yaml@npm:4.0.2"
+  checksum: bfe9df75d6144c0dc1e60e56eabb49dbe22bf65ba021735282da58cfc255f0a9a183239619efa5dc9393a20f2941c2dc6ff9d0c447edc00b26b88db2278eb3aa
   languageName: node
   linkType: hard
 
@@ -7999,7 +7999,7 @@ typescript@^4.2.4:
     "@jest/types": ^27.0.6
     "@types/babel__core": ^7.1.15
     "@types/eslint": ^7.2.14
-    "@types/js-yaml": ^4.0.1
+    "@types/js-yaml": ^4.0.2
     "@types/node": ^15.3.1
     "@types/node-fetch": ^2.5.11
     "@types/yargs": ^17.0.2
