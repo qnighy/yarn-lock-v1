@@ -1869,13 +1869,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:^2.5.11":
-  version: 2.5.11
-  resolution: "@types/node-fetch@npm:2.5.11"
+"@types/node-fetch@npm:^2.5.12":
+  version: 2.5.12
+  resolution: "@types/node-fetch@npm:2.5.12"
   dependencies:
     "@types/node": "*"
     form-data: ^3.0.0
-  checksum: 944b0c6bed70afe330db022b90fb0c99f51b70a3fe38e2cc197207985cb6e1903eac5c0a87bb642c4b3683db9dafe3bee5ba020f9f9868b7c3eb70beae379b1a
+  checksum: f648728116a24b9b5abc117e08788ed859283548ed65d374dba333d4604a7e8d22934cb4dbe7d64498c5c7f04885d84a2dc11c9a4115d426c242e74fb2f2a6a6
   languageName: node
   linkType: hard
 
@@ -8001,7 +8001,7 @@ typescript@^4.3.5:
     "@types/eslint": ^7.28.0
     "@types/js-yaml": ^4.0.2
     "@types/node": ^15.3.1
-    "@types/node-fetch": ^2.5.11
+    "@types/node-fetch": ^2.5.12
     "@types/yargs": ^17.0.2
     "@typescript-eslint/eslint-plugin": ^4.28.4
     "@typescript-eslint/parser": ^4.28.4
