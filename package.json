@@ -23,7 +23,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@babel/runtime-corejs3": "^7.14.8",
+    "@babel/runtime-corejs3": "^7.14.9",
     "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.1",
     "yargs": "^17.0.1"
@@ -31,9 +31,9 @@
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.14.8",
-    "@babel/node": "^7.14.7",
+    "@babel/node": "^7.14.9",
     "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
     "@babel/preset-typescript": "^7.14.5",
     "@jest/globals": "^27.0.6",
     "@jest/types": "^27.0.6",
