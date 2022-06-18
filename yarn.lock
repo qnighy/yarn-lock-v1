@@ -5584,13 +5584,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.set@npm:^4.3.2":
-  version: 4.3.2
-  resolution: "lodash.set@npm:4.3.2"
-  checksum: 4dfedacae1c1cf86385a2b6e30ba538f06c90d703a0abd83a11432d80ec24b4016fe27359cdc0554a02a31a468789cbb282801dd755e54581cf0295477e2341d
-  languageName: node
-  linkType: hard
-
 "lodash.truncate@npm:^4.4.2":
   version: 4.4.2
   resolution: "lodash.truncate@npm:4.4.2"
@@ -5598,7 +5591,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.7.0":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.21, lodash@npm:^4.7.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: 4983720b9abca930a4a46f18db163d7dad8dd00dbed6db0cc7b499b33b717cce69f80928b27bbb1ff2cbd3b19d251ee90669a8b5ea466072ca81c2ebe91e7468
@@ -5944,15 +5937,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nock@npm:^13.1.1":
-  version: 13.1.1
-  resolution: "nock@npm:13.1.1"
+"nock@npm:^13.2.7":
+  version: 13.2.7
+  resolution: "nock@npm:13.2.7"
   dependencies:
     debug: ^4.1.0
     json-stringify-safe: ^5.0.1
-    lodash.set: ^4.3.2
+    lodash: ^4.17.21
     propagate: ^2.0.0
-  checksum: fa118c2c62a432b4665fa2a8fe549959ba41666bebf5939873a0fbc3a860310580272de74b3ea9538758a7f08dddd807edf35f162854763a0056f2ed892b210f
+  checksum: 608d887b8a3af501d2b0422375787b9cefedde997e64938fe2ca880c87c968c56c7acc57d86203e790395c7547c1b73384cc9ed0ef344e6a30c093f4c0088ed9
   languageName: node
   linkType: hard
 
@@ -8012,7 +8005,7 @@ typescript@^4.3.5:
     eslint-plugin-jest: ^24.4.0
     jest: ^27.0.6
     js-yaml: ^4.1.0
-    nock: ^13.1.1
+    nock: ^13.2.7
     nock-record: ^0.3.9
     node-fetch: ^2.6.1
     prettier: ^2.3.2
