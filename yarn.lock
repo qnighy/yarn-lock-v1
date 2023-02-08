@@ -1879,7 +1879,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^15.3.1":
+"@types/node@npm:*":
   version: 15.3.1
   resolution: "@types/node@npm:15.3.1"
   checksum: 1c3c94f4c8e1df26b24a00637fdd5a50a5ea7afd0e97cbd298cf675d49ad5436b8b2b111b349194e2fb8bfc81291a67dff9eac80abbf610f938f7a89ba5ba426
@@ -1890,6 +1890,13 @@ __metadata:
   version: 13.13.50
   resolution: "@types/node@npm:13.13.50"
   checksum: 794a9377f624bba147cd2945daeef42dfca2138e850acaad28cd0ea447ad7cab8686285305708d7e9d1aee28aa8c148183ca2e31cd8d2153d40c85b04d13c57d
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.13.0":
+  version: 18.13.0
+  resolution: "@types/node@npm:18.13.0"
+  checksum: 7c999624ab39ec735220bb413b1dbe603316c857b806ab3cae67fdf33f60c51611a194afd1aef5af3d4e2a94cf2bf7add7ded7c274dd3c981805bfa835c959f2
   languageName: node
   linkType: hard
 
@@ -8000,7 +8007,7 @@ typescript@^4.3.5:
     "@types/babel__core": ^7.1.15
     "@types/eslint": ^7.28.0
     "@types/js-yaml": ^4.0.3
-    "@types/node": ^15.3.1
+    "@types/node": ^18.13.0
     "@types/node-fetch": ^2.5.12
     "@types/yargs": ^17.0.2
     "@typescript-eslint/eslint-plugin": ^4.28.5
