@@ -6445,12 +6445,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "prettier@npm:2.3.2"
+"prettier@npm:^2.8.8":
+  version: 2.8.8
+  resolution: "prettier@npm:2.8.8"
   bin:
     prettier: bin-prettier.js
-  checksum: 4fd89a7f6a12b13456d359fba2b1dd0fc0a17cf33f8f15953ab9f43b21ea9b09b5a2861d63b558ca0577274ce606d390e70628cf93e26d19d6cb7f19c9eebc31
+  checksum: a2afc2fea5326d1e3667e385652f4f82ebb3467a79fd893ad237e683a65ad865ecf108658cfc296cc1224ce5862340417a4eddea2174917d3b4bc732e3e83501
   languageName: node
   linkType: hard
 
@@ -8015,7 +8015,7 @@ typescript@^4.3.5:
     nock: ^13.1.1
     nock-record: ^0.3.9
     node-fetch: ^2.6.1
-    prettier: ^2.3.2
+    prettier: ^2.8.8
     typescript: ^4.3.5
     yargs: ^17.0.1
   languageName: unknown
