@@ -317,10 +317,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/helper-validator-identifier@npm:^7.14.5, @babel/helper-validator-identifier@npm:^7.14.8, @babel/helper-validator-identifier@npm:^7.14.9":
-  version: 7.14.9
-  resolution: "@babel/helper-validator-identifier@npm:7.14.9"
-  checksum: a4825ac127a83def2def864fbf14f3601037c8bc35e8347a413b21d06f0257e8a8b0cde88885262e6c0401f71d24b158ba8e8c4e08c1c915dbdba1db7ec8d043
+"@babel/helper-string-parser@npm:^7.23.4":
+  version: 7.23.4
+  resolution: "@babel/helper-string-parser@npm:7.23.4"
+  checksum: c5a583bfc42e9ba6bbe4a332d25c007a9937c8489604883f396cbf144ebdb8558315b31784152df64d3764a37f9294ec79fff1593fe7e92d57cb29b7ba038dc8
+  languageName: node
+  linkType: hard
+
+"@babel/helper-validator-identifier@npm:^7.14.5, @babel/helper-validator-identifier@npm:^7.14.8, @babel/helper-validator-identifier@npm:^7.22.20":
+  version: 7.22.20
+  resolution: "@babel/helper-validator-identifier@npm:7.22.20"
+  checksum: 8955fc7aaaddb063d04e47800f8d036e46c6ba9cc5262d2686046dfb2b96cde57a8b77c89d6222e7979ad60bdf17231bea10688bde02e203acc71854c3db18d9
   languageName: node
   linkType: hard
 
@@ -383,12 +390,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.14.5, @babel/parser@npm:^7.14.8, @babel/parser@npm:^7.7.2":
-  version: 7.14.8
-  resolution: "@babel/parser@npm:7.14.8"
+"@babel/parser@npm:^7.1.0, @babel/parser@npm:^7.14.5, @babel/parser@npm:^7.14.8, @babel/parser@npm:^7.20.7, @babel/parser@npm:^7.7.2":
+  version: 7.23.4
+  resolution: "@babel/parser@npm:7.23.4"
   bin:
     parser: ./bin/babel-parser.js
-  checksum: 1f900e92675bac6120dfb3e9ea86841fdaba11d338a220017dbcb9e95815a3854ea479da8027e80acaa7f0e618b96e59bbbf3a230a05aaa3407c9419eb742cfe
+  checksum: 24d06951019df4f7da2c66e4974ecff8c46ad3276e9f124add074e4fe15977155ee3b90419eac8d1b77bdefcb38d6c1e7150716dd17a624d2299ecb7f5b7ff9a
   languageName: node
   linkType: hard
 
@@ -1358,13 +1365,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:^7.0.0, @babel/types@npm:^7.14.5, @babel/types@npm:^7.14.8, @babel/types@npm:^7.14.9, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
-  version: 7.14.9
-  resolution: "@babel/types@npm:7.14.9"
+"@babel/types@npm:^7.0.0, @babel/types@npm:^7.14.5, @babel/types@npm:^7.14.8, @babel/types@npm:^7.14.9, @babel/types@npm:^7.20.7, @babel/types@npm:^7.3.0, @babel/types@npm:^7.3.3, @babel/types@npm:^7.4.4, @babel/types@npm:^7.8.3":
+  version: 7.23.4
+  resolution: "@babel/types@npm:7.23.4"
   dependencies:
-    "@babel/helper-validator-identifier": ^7.14.9
+    "@babel/helper-string-parser": ^7.23.4
+    "@babel/helper-validator-identifier": ^7.22.20
     to-fast-properties: ^2.0.0
-  checksum: c993256040066ed62bbeb1fff6e79a19127411ee46911830dfc82162e43ab76e1b3d90fa4d1fdf4203c4d0bfc64114e18afd4ba1b22e9eb2e878eb9b4ce019c9
+  checksum: bfc3b078d5a99a7c58987d0e6f086921c6543c2d88b4515b2935b265fdfb8aaef15781334dd6db841d8653f4ddc4c5f8ff1267c09ff937c8d317a603745adaee
   languageName: node
   linkType: hard
 
@@ -1728,16 +1736,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.1.15":
-  version: 7.1.15
-  resolution: "@types/babel__core@npm:7.1.15"
+"@types/babel__core@npm:^7.0.0, @types/babel__core@npm:^7.1.14, @types/babel__core@npm:^7.20.5":
+  version: 7.20.5
+  resolution: "@types/babel__core@npm:7.20.5"
   dependencies:
-    "@babel/parser": ^7.1.0
-    "@babel/types": ^7.0.0
+    "@babel/parser": ^7.20.7
+    "@babel/types": ^7.20.7
     "@types/babel__generator": "*"
     "@types/babel__template": "*"
     "@types/babel__traverse": "*"
-  checksum: a9e93975a647b2037c624abffab43bdfa434eb3ffee343a94d649d44f802281ffd6044b8bcfe0b8e4a47d9c1759d4b6e6745b540cc8793d504f805adae9fcd52
+  checksum: 24189be7d31cf0142331a270a7a2c6c2bc21b6f2310e8c9162e5b5f5a74ea4d5e49da754f356152c7d4e3b353d782dafc78c5bd57c9b57a696b79ce9cc55b80b
   languageName: node
   linkType: hard
 
@@ -7997,7 +8005,7 @@ typescript@^4.3.5:
     "@babel/runtime-corejs3": ^7.14.9
     "@jest/globals": ^27.0.6
     "@jest/types": ^27.0.6
-    "@types/babel__core": ^7.1.15
+    "@types/babel__core": ^7.20.5
     "@types/eslint": ^7.28.0
     "@types/js-yaml": ^4.0.3
     "@types/node": ^15.3.1
