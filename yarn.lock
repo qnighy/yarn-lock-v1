@@ -1788,13 +1788,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^7.28.0":
-  version: 7.28.0
-  resolution: "@types/eslint@npm:7.28.0"
+"@types/eslint@npm:^8.56.10":
+  version: 8.56.10
+  resolution: "@types/eslint@npm:8.56.10"
   dependencies:
     "@types/estree": "*"
     "@types/json-schema": "*"
-  checksum: eae026f960db17c8a6e88b736eeabc6da553846ca88668d0757d1ee74e4abf2bed40ccff28548c89b088f513e9064f7a458c831dd8ef4445d0b5dc85eb94e791
+  checksum: 177c5c59ea211b9ae718c68d674c832f786bccd3b7270d6e0deb49425aa7996a5374b276f16b514d8958eebfeb0c5405cd56a4b5598f9e954e7f990c64c1f3d6
   languageName: node
   linkType: hard
 
@@ -7998,7 +7998,7 @@ typescript@^4.3.5:
     "@jest/globals": ^27.0.6
     "@jest/types": ^27.0.6
     "@types/babel__core": ^7.1.15
-    "@types/eslint": ^7.28.0
+    "@types/eslint": ^8.56.10
     "@types/js-yaml": ^4.0.3
     "@types/node": ^15.3.1
     "@types/node-fetch": ^2.5.12
